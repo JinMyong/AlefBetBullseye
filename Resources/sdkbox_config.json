@@ -1,0 +1,31 @@
+
+{
+    "ios": {
+        "Review":{
+            "AppID":"1081250079",
+            "DayLimit": 7,                  //days before rate prompt show
+            "LaunchLimit": 3,               //launch times before rate prompt show
+            "UserEventLimit": -1,            //user event times before rate prompt show, user event increase by invoke userDidSignificantEvent
+            "DayForReminding": 1,           //days after user selected reminding later button
+            "LaunchForReminding": 2,        //launch times after user selected reminding later button
+            "tryPromptWhenInit": true       //try to display prompt when plugin initialization
+            "Debug" : true
+        }
+    },
+    "android": {
+        "Review":{
+            "DayLimit": 0,
+            "LaunchLimit": 3,
+            "UserEventLimit": 0,
+            "DayForReminding": 1,
+            "LaunchForReminding": 2,
+            "tryPromptWhenInit": true,
+            "promptTitle":"cutome tile",
+            "promptMessage":"this is custome message",
+            "promptCancel":"Cancel",
+            "promptRate":"Rate",
+            "promptRateLater":"Remind me later"
+        }
+    }
+}
+
