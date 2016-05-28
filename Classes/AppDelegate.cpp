@@ -4,10 +4,6 @@
 #include "HebrewUtils.hpp"
 #include "LoadScene.hpp"
 
-#ifdef SDKBOX_ENABLED
-#include "PluginReview/PluginReview.h"
-#endif
-
 using namespace CocosDenshion;
 
 USING_NS_CC;
@@ -21,6 +17,7 @@ AppDelegate::~AppDelegate()
 }
 
 bool AppDelegate::applicationDidFinishLaunching() {
+    
     // initialize director
     CCDirector* pDirector = CCDirector::sharedDirector();
     CCEGLView* pEGLView = CCEGLView::sharedOpenGLView();

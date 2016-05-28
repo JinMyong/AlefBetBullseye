@@ -20,8 +20,6 @@
 #include "CCAlertView.h"
 
 #include "GameResultScene.hpp"
-#include "PluginReview/PluginReview.h"
-
 
 CCScene* MainMenuScene::scene()
 {
@@ -40,7 +38,7 @@ bool MainMenuScene::init()
     options = GameOptions::getInstance();
     bag = LetterBag::getInstance();
     createUI();
-    SoundEffects::getInstance()->playThemeBackgroundMusic();    
+    SoundEffects::getInstance()->playThemeBackgroundMusic();
     return true;
 }
 
@@ -171,14 +169,12 @@ void MainMenuScene::gotoStore(cocos2d::CCObject *sender)
 
 void MainMenuScene::resetHandler(cocos2d::CCObject *sender)
 {
-//    CCLog("The Reset Button Pressed");
-//    SoundEffects::getInstance()->playButtonEffect();
-//    CCMenu* menu = (CCMenu*)this->getChildByTag(100);
-//    menu->setEnabled(false);
-//    CCAlertView* alert = CCAlertView::create("Warning", "You are about to reset this game so that the the level goes back to Level 1 and the coins collected reset.", "", "", this, callfuncO_selector(MainMenuScene::alertOKHandler), callfuncO_selector(MainMenuScene::alertCancelHandler));
-//    this->addChild(alert, 100);
-    
-    this->onShowReview(NULL);
+    CCLog("The Reset Button Pressed");
+    SoundEffects::getInstance()->playButtonEffect();
+    CCMenu* menu = (CCMenu*)this->getChildByTag(100);
+    menu->setEnabled(false);
+    CCAlertView* alert = CCAlertView::create("Warning", "You are about to reset this game so that the the level goes back to Level 1 and the coins collected reset.", "", "", this, callfuncO_selector(MainMenuScene::alertOKHandler), callfuncO_selector(MainMenuScene::alertCancelHandler));
+    this->addChild(alert, 100);
 }
 
 void MainMenuScene::alertOKHandler(cocos2d::CCObject *sender)
@@ -197,11 +193,4 @@ void MainMenuScene::alertCancelHandler(cocos2d::CCObject *sender)
     CCMenu* menu = (CCMenu*)this->getChildByTag(100);
     menu->setEnabled(true);
     return;
-}
-
-void MainMenuScene::onShowReview(cocos2d::CCObject *sender)
-{
-    sdkbox::PluginReview::rate();
-//    sdkbox::PluginReview::show(/* force */);
-    CCLOG("sdkbox::PluginReview::show()");
 }

@@ -26,8 +26,6 @@ private:
     GameOptions*    options;
     LetterBag*      bag;
     
-    void onShowReview(cocos2d::CCObject *sender);
-    
 public:
     static CCScene* scene();
     virtual bool init();
